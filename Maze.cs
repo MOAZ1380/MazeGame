@@ -10,8 +10,7 @@ namespace MazeGame
         private int ExitX;
         private int ExitY;
 
-        public Maze(int width, int height)
-        {
+        public Maze(int width, int height){
             _Width = width;
             _Height = height;
             _MazeGrid = new IMazeObject[width, height];
@@ -22,8 +21,9 @@ namespace MazeGame
         }
             
 
-        public void DrawMaze()
-        {
+
+
+        public void DrawMaze(){
             Console.Clear();
             for (int y = 0; y < _Height; y++)
             {
@@ -60,8 +60,9 @@ namespace MazeGame
                 Console.WriteLine();
             }
         }
-        private void UpdatePlayer(int dx, int dy)
-        {
+
+
+        private void UpdatePlayer(int dx, int dy){
             int newX = _Player.X + dx;
             int newY = _Player.Y + dy;
 
@@ -87,8 +88,10 @@ namespace MazeGame
             DrawMaze();
 
         }
-        public void MovePlayer()
-        {
+
+
+
+        public void MovePlayer(){
             ConsoleKeyInfo userInput = Console.ReadKey();
             ConsoleKey key = userInput.Key;
 
@@ -109,7 +112,6 @@ namespace MazeGame
                     UpdatePlayer(1, 0);
                     break;
                 default:
-                    // Invalid key pressed
                     break;
             }
         }
